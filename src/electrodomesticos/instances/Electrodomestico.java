@@ -4,6 +4,7 @@
  */
 package electrodomesticos.instances;
 
+import enums.ColoresElectro;
 import enums.Efic;
 import java.util.Scanner;
 
@@ -13,15 +14,15 @@ import java.util.Scanner;
  */
 public class Electrodomestico {
 
-    protected Double precio;
-    protected String color;
-    protected Efic eficiencia;
-    protected Double peso;
+     protected Double precio;
+     protected ColoresElectro color;
+     protected Efic eficiencia;
+     protected Double peso;
 
      public Electrodomestico() {
      }
 
-     public Electrodomestico(Double precio, String color, Efic eficiencia, Double peso) {
+     public Electrodomestico(Double precio, ColoresElectro color, Efic eficiencia, Double peso) {
           this.precio = precio;
           this.color = color;
           this.eficiencia = eficiencia;
@@ -36,11 +37,11 @@ public class Electrodomestico {
           this.precio = precio;
      }
 
-     public String getColor() {
+     public ColoresElectro getColor() {
           return color;
      }
 
-     public void setColor(String color) {
+     public void setColor(ColoresElectro color) {
           this.color = color;
      }
 
@@ -59,24 +60,70 @@ public class Electrodomestico {
      public void setPeso(Double peso) {
           this.peso = peso;
      }
-    
-    public abstract void comprobarConsumoEnergetico(String letra);
-    public abstract void comprobarColor( String color);
-    
-    public Electrodomestico crearElectrodomestico(){
-         Electrodomestico el = new Electrodomestico();
-         Scanner scn = new Scanner(System.in).useDelimiter("\n");
-         
-         System.out.println("ingrese el color del artículo");
-         el.comprobarColor(scn.next());
-         System.out.println("ingrese la eficiencia energética");
-         el.comprobarConsumoEnergetico(scn.next().toUpperCase());
-         el.precio = 1000d;
-    return el;
-    }
-    
-    public void precioFinal(){
-         a
-    }
-    
+
+     public Efic comprobarConsumoEnergetico(String letra) {
+          for (Efic value : Efic.values()) {
+               if (value.name().equalsIgnoreCase(letra)) {
+                    return value;
+               }
+          }
+          return Efic.F;
+     }
+
+     public ColoresElectro comprobarColor(String color) {
+          for (ColoresElectro value : ColoresElectro.values()) {
+               if (value.name().equalsIgnoreCase(color)) {
+                    return value;
+               }
+          }
+          return ColoresElectro.BLANCO;
+     }
+
+//          Electrodomestico el = new Electrodomestico();
+     public void crearElectrodomestico() {
+          Scanner scn = new Scanner(System.in).useDelimiter("\n");
+
+          System.out.println("ingrese el color del artículo");
+          this.color = comprobarColor(scn.next());
+          System.out.println("ingrese la eficiencia energética");
+          this.eficiencia = comprobarConsumoEnergetico(scn.next().toUpperCase());
+          this.precio = 1000d;
+     }
+
+     public double precioFinal() {
+          
+          double salida = 1000;
+          switch (this.eficiencia) {
+               case A:
+                    salida += 1000d;
+                    break;
+               case B:
+                    salida += 800;
+                    break;
+               case C:
+                    salida += 600;
+                    break;
+               case D:
+                    salida += 500;
+                    break;
+               case E:
+                    salida += 300;
+                    break;
+               case F:
+                    salida += 100;
+
+          }
+          if (this.peso >= 80) {
+               salida += 1000;
+          } else if (this.peso >= 50) {
+               salida += 800;
+          } else if (this.peso >= 20) {
+               salida += 500;
+          } else {
+               salida += 100;
+          }
+          
+          return salida;
+     }
+
 }
