@@ -8,6 +8,9 @@ import animal.instances.Animal;
 import animal.instances.Caballo;
 import animal.instances.Gato;
 import animal.instances.Perro;
+import electrodomesticos.instances.Electrodomestico;
+import electrodomesticos.instances.Lavadora;
+import electrodomesticos.instances.Televisor;
 
 /**
  *
@@ -32,7 +35,13 @@ public class Guia_herencia {
 //          Animal caballo = new Caballo("Spark", "Pasto", 25, "Fino");
 //          System.out.println(caballo.alimentarse());
 
-
+          Lavadora l1 = new Lavadora();
+          l1 = l1.crearLavadora();
+          System.out.println(l1.precioFinal());
+          //--> objeto televisor
+          Televisor t1 = new Televisor();
+          t1 = t1.crearTelevisor();
+          System.out.println(t1.precioFinal());
      }
-     
+
 }

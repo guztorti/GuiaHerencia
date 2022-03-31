@@ -82,7 +82,8 @@ public class Electrodomestico {
 //          Electrodomestico el = new Electrodomestico();
      public void crearElectrodomestico() {
           Scanner scn = new Scanner(System.in).useDelimiter("\n");
-
+          System.out.println("¿cuánto pesa el artículo?");
+          this.peso = scn.nextDouble();
           System.out.println("ingrese el color del artículo");
           this.color = comprobarColor(scn.next());
           System.out.println("ingrese la eficiencia energética");
