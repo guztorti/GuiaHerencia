@@ -68,4 +68,11 @@ public final class Televisor extends Electrodomestico{
           }
           return salida;
      }
+
+     @Override
+     public String toString() {
+          String CadenaTdT = tdt?"con Sintonizador TDT":"sin sintonizador TDT";
+          return "Televisor{" + "resolucion=" + resolucion + "'', "+CadenaTdT+ "color: " + color.name()+ " eficiencia: "+ eficiencia.name()+" precio: "+ precio+ '}';
+     }
+     
 }
