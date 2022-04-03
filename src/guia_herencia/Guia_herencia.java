@@ -13,6 +13,8 @@ import electrodomesticos.instances.Lavadora;
 import electrodomesticos.instances.Televisor;
 import enums.ColoresElectro;
 import enums.Efic;
+import geometria.entities.Circulo;
+import geometria.entities.Rectangulo;
 import java.util.ArrayList;
 
 /**
@@ -45,25 +47,40 @@ public class Guia_herencia {
 //          Televisor t1 = new Televisor();
 //          t1 = t1.crearTelevisor();
 //          System.out.println(t1.precioFinal());
-          ArrayList<Electrodomestico> lista = new ArrayList();
-          Lavadora l2 = new Lavadora(30d, 0d, ColoresElectro.NEGRO, Efic.C, 50d);
-          l2.setPrecio(l2.precioFinal());
-          lista.add(l2); 
-          Lavadora l3 = new Lavadora(45d, 0d, ColoresElectro.ROJO, Efic.A, 60d);
-          l3.setPrecio(l3.precioFinal());
-          lista.add(l3);
-          Televisor t2= new Televisor(45d, false, 0d, ColoresElectro.NEGRO, Efic.C,18d);
-          t2.setPrecio(t2.precioFinal());
-          lista.add(t2);
-          Televisor t3= new Televisor(32d, true, 0d, ColoresElectro.NEGRO, Efic.C,18d);
-          t3.setPrecio(t3.precioFinal());
-          lista.add(t3);
-          double PrecioTotal = 0;
-          for (Electrodomestico elem : lista) {
-               System.out.println(elem.toString());
-               PrecioTotal += elem.getPrecio();
-          }
-          System.out.println("La suma del precio de TODOS los electrodomésticos es:"+PrecioTotal);
+//--> Ejercicio 3
+//          ArrayList<Electrodomestico> lista = new ArrayList();
+//          Lavadora l2 = new Lavadora(30d, 0d, ColoresElectro.NEGRO, Efic.C, 50d);
+//          l2.setPrecio(l2.precioFinal());
+//          lista.add(l2); 
+//          Lavadora l3 = new Lavadora(45d, 0d, ColoresElectro.ROJO, Efic.A, 60d);
+//          l3.setPrecio(l3.precioFinal());
+//          lista.add(l3);
+//          Televisor t2= new Televisor(45d, false, 0d, ColoresElectro.NEGRO, Efic.C,18d);
+//          t2.setPrecio(t2.precioFinal());
+//          lista.add(t2);
+//          Televisor t3= new Televisor(32d, true, 0d, ColoresElectro.NEGRO, Efic.C,18d);
+//          t3.setPrecio(t3.precioFinal());
+//          lista.add(t3);
+//          double PrecioTotal = 0;
+//          for (Electrodomestico elem : lista) {
+//               System.out.println(elem.toString());
+//               PrecioTotal += elem.getPrecio();
+//          }
+//          System.out.println("La suma del precio de TODOS los electrodomésticos es:"+PrecioTotal);
+//--> Ejercicio 4 
+
+//          Circulo c1 = new Circulo(3d);
+//          System.out.println(String.format("el círculo de radio %s tiene %scm2 de superficie \n"
+//                  + "y un perímetro de %scm", c1.getRadio(), c1.area(), c1.perimetro()));
+//          
+//          Rectangulo r1 = new Rectangulo(4d,3d);
+//          System.out.println(String.format("El rectángulo de base %s y altura %s\n"
+//                  + "tiene superficie %scm2 y perimetro %scm"
+//                  , r1.getBase(),r1.getAltura(),r1.area(),r1.perimetro()));//argumentos
+          
+//--> Ejercicio 1 Extra (puerto)
+
+
      }
 
 }
